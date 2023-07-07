@@ -1,4 +1,109 @@
-html, body {
-    margin: 0;
-    padding: 0;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1c1c1c;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  max-width: 700px;
+  height: 600px;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 6fr minmax(150px, 2fr);
+  grid-gap: 1em;
+  padding: 1.5em 1em;
+}
+
+.scheme-selection,
+.generate-btn {
+  border: solid 1px #d1d5db;
+  border-radius: 6px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+}
+
+.color-input {
+  width: 60px;
+  height: 45px;
+  border: solid 3px #e5e5e5;
+}
+
+.scheme-selection {
+  width: 100%;
+  padding: 0.5em 1em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url("/img/dropdown.png") no-repeat 95% center;
+}
+
+.scheme-selection option:checked {
+  font-weight: 600;
+}
+
+.generate-btn {
+  background-color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+}
+
+main {
+  position: relative;
+}
+
+.color-scheme {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  height: 100%;
+}
+
+.color-scheme > div {
+  position: relative;
+}
+
+.color-hex {
+  width: 100%;
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  background-color: #ffffff;
+  padding: 1em 1.875em;
+  font-size: 0.75rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.copy-popup {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  max-width: 50%;
+  height: fit-content;
+  padding: 1em 1.25em;
+  border-radius: 5px;
+  font-weight: 500;
+  background-color: whitesmoke;
+  text-align: center;
+}
+
+.visible {
+  display: block;
 }
