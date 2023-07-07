@@ -11,6 +11,8 @@ const schemes = [
   "quad",
 ];
 
+// Load default color and scheme (black && monochrome)
+
 window.addEventListener("load", () => {
   let html = "";
   schemes.forEach(
@@ -36,12 +38,14 @@ document.addEventListener("change", (e) => {
   }
 });
 
-// Request data from the Color API
+// Request data from the Color API when clicking the btn
 
 document.getElementById("generate-btn").addEventListener("click", (e) => {
   e.preventDefault();
   getColorScheme();
 });
+
+// Function that retrieves the color scheme and generates the html for the colour palette.
 
 const getColorScheme = () => {
   fetch(
